@@ -25,17 +25,20 @@ public class StudentServiceImpl implements IStudentService{
 
 	@Override
 	public Student findById(long id) throws Exception{
+		//通过id查询某个学生
 		return studentMapper.findById(id);
 	}
 	
 	@Override
 	public void save(Student student) throws Exception{
+		//插入学生信息
 		studentMapper.save(student);
 	}
 	
 	
 	@Override
 	public void update(Student student) throws Exception{
+		//修改学生信息
 		studentMapper.update(student);
 	}
 

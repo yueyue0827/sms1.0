@@ -20,25 +20,25 @@ public class StudentController {
 	private IStudentService studentService;
 	
 	@PostMapping("saveStudent")
-	public String saveStudent(Student student){
+	public MsgResponse saveStudent(Student student){
 		try {
 			studentService.save(student);
-			return "添加学生信息成功";
+			return MsgResponse.success("添加学生信息成功！", null);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return e.getMessage();
+			return MsgResponse.error(e.getMessage());
 		}
 	}
 	
 	
 	@PostMapping("updateStudent")
-	public String updateStudent(Student student){
+	public MsgResponse updateStudent(Student student){
 		try {
 			studentService.update(student);
-			return "修改成功!";
+			return MsgResponse.success("修改成功！", null);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return e.getMessage();
+			return MsgResponse.error(e.getMessage());
 		}
 		
 	}	
