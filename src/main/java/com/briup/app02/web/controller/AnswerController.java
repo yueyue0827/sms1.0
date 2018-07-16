@@ -23,7 +23,7 @@ public class AnswerController {
 	public MsgResponse saveAnswer(Answer answer){
 		try {
 			answerService.save(answer);
-			return MsgResponse.success("添加学生信息成功！", null);
+			return MsgResponse.success("添加问卷答案信息成功！", null);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return MsgResponse.error(e.getMessage());
@@ -35,7 +35,7 @@ public class AnswerController {
 	public MsgResponse updateAnswer(Answer answer){
 		try {
 			answerService.update(answer);
-			return MsgResponse.success("修改成功！", null);
+			return MsgResponse.success("修改问卷答案成功！", null);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return MsgResponse.error(e.getMessage());
